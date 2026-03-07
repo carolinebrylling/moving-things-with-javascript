@@ -83,4 +83,37 @@ function playSoundOnMovement() {
 
 
 
+function createEnemy() {
+  const enemy = document.createElement("div");
+  enemy.classList.add("enemy");
+
+  enemy.style.left = Math.floor(Math.random() * 360) + "px";
+  enemy.style.bottom = "400px";
+
+  document.querySelector("#game").appendChild(enemy);
+
+  moveEnemy(enemy);
+};
+
+function moveEnemy(enemy) {
+
+  const fallInterval = setInterval(() => {
+
+    const enemyBottom = parseInt(enemy.style.bottom);
+
+    if (enemyBottom > 0) {
+      enemy.style.bottom = enemyBottom - 5 + "px";
+    } else {
+      clearInterval(fallInterval);
+      enemy.remove();
+    }
+
+  }, 50);
+
+};
+
+setInterval(createEnemy, 1000);
+
+
+
 

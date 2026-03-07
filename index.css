@@ -56,3 +56,14 @@
   position: absolute;
   width: 9px;
 }
+
+
+
+
+.enemy {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: red;
+}
+
